@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Visor BeachB - Con Menú</title>
+  <script src="https://kit.fontawesome.com/f6a5a744b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<!-- TUS BOTONES ORIGINALES -->
+<div id="ui">
+  <button onclick="cargarJSON()">
+    
+    <i class="fa-solid fa-file"></i>
+    
+  </button>
+  <button onclick="camaraReset()">
+    
+    <i class="fa-solid fa-undo"></i>
+    
+  </button>
+  <button onclick="centrarEnSeleccionado()">
+    
+    <i class="fa-solid fa-location"></i>
+    
+  </button>
+  <button onclick="subir()">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+  <button onclick="bajar()">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</button>
+  <button onclick="izquierda()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+  <button onclick="derecha()">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+</div>
+
+<!-- BOTÓN Y MENÚ NUEVO -->
+<button id="btnMenu" onclick="alternarMenu()">
+  
+  <i class="fa-solid fa-list"></i>
+  
+</button>
+<div id="menuLateral">
+  <button id="cerrarMenu" onclick="alternarMenu()">✕</button>
+  <div class="search">
+    <i class="fa-solid fa-search"></i>
+    <input type="text" id="buscador" placeholder="Buscar por nombre o tipo..." oninput="actualizarLista()">
+  </div>
+  <select id="filtroTipo" onchange="actualizarLista()">
+    <option value="todos">Todos los tipos</option>
+  </select>
+  <div class="contador" id="contador">0 objetos</div>
+  <div id="listaObjetos"></div>
+</div>
+
+<div id="ayuda">
+  1 dedo: Girar<br>
+  2 dedos: Mover/Acercar
+</div>
+<div id="mensaje"></div>
+<canvas id="canvas"></canvas>
+<div id="info"></div>
+
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
